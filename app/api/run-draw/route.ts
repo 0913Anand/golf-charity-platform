@@ -7,7 +7,7 @@ export async function POST() {
     .from("scores")
     .select("score")
 
-  const scores = data.map(s => s.score)
+  const scores = (data ?? []).map((s) => s.score)
 
   const numbers = weightedDraw(scores)
 
